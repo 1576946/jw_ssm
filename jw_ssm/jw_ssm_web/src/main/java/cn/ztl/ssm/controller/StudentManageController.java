@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/StudentManage")
-public class StudentManage {
+public class StudentManageController {
     @Autowired
     private IStudentService iStudentService;
 
@@ -26,10 +26,8 @@ public class StudentManage {
      * @return
      */
     @RequestMapping("/Pages.do")
-    public ModelAndView returnStudnetView(@RequestParam(name = "page", required = true, defaultValue = "1") int page, @RequestParam(name = "size", required = true, defaultValue = "5") int size) throws Exception {
+    public ModelAndView returnStudnetView(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page, @RequestParam(name = "size", required = true, defaultValue = "7") Integer size) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-
-
         List<Student> ls = iStudentService.findAll(page, size);
 
         PageInfo pageInfo = new PageInfo(ls);

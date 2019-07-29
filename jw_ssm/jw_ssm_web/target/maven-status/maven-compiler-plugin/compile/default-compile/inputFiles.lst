@@ -1,4 +1,6 @@
 D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\MainPagesController.java
-D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\StudentManage.java
+D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\StudentManageController.java
 D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\DormPageController.java
+D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\SysLogController.java
 D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\VisitPageController.java
+D:\work\jw_ssm\jw_ssm_web\src\main\java\cn\ztl\ssm\controller\LogAop.java

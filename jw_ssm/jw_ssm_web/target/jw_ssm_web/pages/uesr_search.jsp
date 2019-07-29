@@ -19,8 +19,9 @@
         <div class="col-md-2">
             <div class="list-group">
                 <a href="${pageContext.request.contextPath}/StudentManage/Pages.do" class="list-group-item">学生管理</a>
-                <a href="${pageContext.request.contextPath}/StudentManage/StudentSearch.do" class="list-group-item active">学生搜索</a>
-                <a href="" role="button"  class="list-group-item" data-toggle="modal" data-target="#myModal">添加学生</a>
+                <a href="${pageContext.request.contextPath}/StudentManage/StudentSearch.do"
+                   class="list-group-item active">学生搜索</a>
+                <a href="" role="button" class="list-group-item" data-toggle="modal" data-target="#myModal">添加学生</a>
             </div>
         </div>
         <div class="col-md-10">
@@ -31,7 +32,7 @@
                 <li>
                     <a href="${pageContext.request.contextPath}/StudentManage/Pages.do">学生列表</a>
                 </li>
-                <li  class="active">
+                <li class="active">
                     <a href="${pageContext.request.contextPath}/StudentManage/StudentSearch.do">学生搜索</a>
                 </li>
                 <li>
@@ -65,13 +66,13 @@
 </div>
 
 
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">添加学生</h4>
             </div>
             <div class="modal-body">

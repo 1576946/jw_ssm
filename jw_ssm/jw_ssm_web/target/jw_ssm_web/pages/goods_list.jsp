@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -22,15 +22,15 @@
                 <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do" class="list-group-item active">宿舍管理</a>
                 <a href="${pageContext.request.contextPath}/Dorm_C/Search.do" class="list-group-item">宿舍搜索</a>
                 <a href="${pageContext.request.contextPath}/Dorm_C/Post.do" class="list-group-item">宿舍紧急情况</a>
-                <a href="" role="button" data-toggle="modal" data-target="#myModal">添加宿舍</a>
-               <!-- <a href="" role="button"  class="list-group-item" data-toggle="modal" data-target="#myModal">添加学生</a>-->
+                <a href="" role="button" data-toggle="modal" data-target="#myModal"  class="list-group-item">添加宿舍</a>
+                <!-- <a href="" role="button"  class="list-group-item" data-toggle="modal" data-target="#myModal">添加学生</a>-->
             </div>
         </div>
         <div class="col-md-10">
             <div class="page-header">
             </div>
             <ul class="nav nav-tabs">
-                <li  class="active">
+                <li class="active">
                     <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do">宿舍管理</a>
                 </li>
                 <li>
@@ -45,17 +45,17 @@
             </ul>
             <table class="table">
                 <thead>
-                    <tr>
-                        <th>宿舍编号</th>
-                        <th>宿舍人数</th>
-                        <th>宿舍水费</th>
-                        <th>宿舍电费</th>
-                        <th>损坏维修</th>
-                        <th>操作</th>
-                    </tr>
+                <tr>
+                    <th>宿舍编号</th>
+                    <th>宿舍人数</th>
+                    <th>宿舍水费</th>
+                    <th>宿舍电费</th>
+                    <th>损坏维修</th>
+                    <th>操作</th>
+                </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${roomingList}" var="rooming">
+                <c:forEach items="${roomingList.list}" var="rooming">
                     <tr>
                         <td>${rooming.s_roomOfNumber }</td>
                         <td>${rooming.numberOfPeople }</td>
@@ -64,7 +64,8 @@
                         <td>${rooming.errorOfAppliance }</td>
                         <td>
                             <div role="presentation" class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#"
+                                        role="button" aria-haspopup="true" aria-expanded="false">
                                     操作<span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
@@ -82,14 +83,29 @@
             </table>
             <nav class="pull-right">
                 <ul class="pagination">
-                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                   <%-- <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                    </li>
                     <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2 </a></li>
                     <li><a href="#">3 </a></li>
                     <li><a href="#">4 </a></li>
                     <li><a href="#">5 </a></li>
                     <li><a href="#">6 </a></li>
-                    <li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
+                    <li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>--%>
+
+                    <li>
+                        <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=${roomingList.pageNum-1}&size=${roomingList.pageSize}"
+                           aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <c:forEach begin="1" end="${roomingList.pages}" var="pageNum">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=${pageNum}&size=${roomingList.pageSize}">${pageNum}</a>
+                        </li>
+                    </c:forEach>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=${roomingList.pageNum+1}&size=${roomingList.pageSize}"><span
+                                aria-hidden="true">&raquo;</span></a></li>
+
+
                 </ul>
             </nav>
         </div>
@@ -101,7 +117,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">添加宿舍</h4>
             </div>
             <div class="modal-body">
@@ -112,7 +129,8 @@
                     </div>
                     <div class="form-group">
                         <label for="addManNumber">宿舍人数</label>
-                        <input type="text" id="addManNumber" class="form-control" placeholder="宿舍人数" name="numberOfPeople">
+                        <input type="text" id="addManNumber" class="form-control" placeholder="宿舍人数"
+                               name="numberOfPeople">
                     </div>
                     <div class="form-group">
                         <label for="addWaterFee">宿舍水费</label>
@@ -124,7 +142,8 @@
                     </div>
                     <div class="form-group">
                         <label for="addError">损坏维修</label>
-                        <input type="text" id="addError" class="form-control" placeholder="损坏维修" name="errorOfAppliance">
+                        <input type="text" id="addError" class="form-control" placeholder="损坏维修"
+                               name="errorOfAppliance">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

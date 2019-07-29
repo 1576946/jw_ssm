@@ -22,19 +22,19 @@
     <!-- 配置视图解析器 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- JSP文件所在的目录 -->
-        <property name="prefix" value="/pages/" />
+        <property name="prefix" value="/pages/"/>
         <!-- 文件的后缀名 -->
-        <property name="suffix" value=".jsp" />
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <!-- 设置静态资源不过滤 -->
-    <mvc:resources location="/css/" mapping="/css/**" />
-    <mvc:resources location="/img/" mapping="/img/**" />
-    <mvc:resources location="/js/" mapping="/js/**" />
-    <mvc:resources location="/fonts/" mapping="/fonts/**" />
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/img/" mapping="/img/**"/>
+    <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/fonts/" mapping="/fonts/**"/>
 
     <!-- 开启对SpringMVC注解的支持 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
     <!--
         支持AOP的注解支持，AOP底层使用代理技术

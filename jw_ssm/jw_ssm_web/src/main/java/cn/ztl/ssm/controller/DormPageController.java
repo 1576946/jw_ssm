@@ -4,9 +4,11 @@ import cn.ztl.ssm.domain.Rooming;
 import cn.ztl.ssm.domain.Rooming_emergency;
 import cn.ztl.ssm.service.IRoomService;
 import cn.ztl.ssm.utils.DateUtils;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -18,10 +20,11 @@ public class DormPageController {
     private IRoomService iRoomService;
 
     @RequestMapping("/Pages.do")
-    public ModelAndView returnDormView() throws Exception {
+    public ModelAndView returnDormView(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page, @RequestParam(name = "size", required = true, defaultValue = "7") Integer size) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-        List<Rooming> ls = iRoomService.findAll();
-        modelAndView.addObject("roomingList", ls);
+        List<Rooming> ls = iRoomService.findAll(page, size);
+        PageInfo pageInfo = new PageInfo(ls);
+        modelAndView.addObject("roomingList", pageInfo);
         modelAndView.setViewName("goods_list");
         return modelAndView;
     }

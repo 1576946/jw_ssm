@@ -18,8 +18,9 @@ public class IRoomServiceImpl implements IRoomService {
     private IRoomingDao iRoomingDao;
 
     @Override
-    public List<Rooming> findAll() throws Exception {
+    public List<Rooming> findAll(Integer page, Integer size) throws Exception {
         // PageHelper.startPage(1,5);
+        PageHelper.startPage(page, size);
         return iRoomingDao.findAll();
     }
 

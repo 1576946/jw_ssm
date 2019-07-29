@@ -1,4 +1,6 @@
 cn\ztl\ssm\controller\MainPagesController.class
 cn\ztl\ssm\controller\VisitPageController.class
+cn\ztl\ssm\controller\LogAop.class
+cn\ztl\ssm\controller\SysLogController.class
+cn\ztl\ssm\controller\StudentManageController.class
 cn\ztl\ssm\controller\DormPageController.class
-cn\ztl\ssm\controller\StudentManage.class

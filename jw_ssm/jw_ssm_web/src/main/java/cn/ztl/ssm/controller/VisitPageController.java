@@ -3,9 +3,11 @@ package cn.ztl.ssm.controller;
 import cn.ztl.ssm.domain.VisitMan;
 import cn.ztl.ssm.service.IVisitService;
 import cn.ztl.ssm.utils.DateUtils;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -17,10 +19,12 @@ public class VisitPageController {
     private IVisitService iVisitService;
 
     @RequestMapping("/Pages.do")
-    public ModelAndView returnVisitView() throws Exception {
+    public ModelAndView returnVisitView(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page, @RequestParam(name = "size", required = true, defaultValue = "7") Integer size) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-        List<VisitMan> ls = iVisitService.findAll();
-        modelAndView.addObject("visitManList", ls);
+        List<VisitMan> ls = iVisitService.findAll(page, size);
+
+        PageInfo pageInfo = new PageInfo(ls);
+        modelAndView.addObject("visitManList", pageInfo);
         modelAndView.setViewName("content");
         return modelAndView;
     }

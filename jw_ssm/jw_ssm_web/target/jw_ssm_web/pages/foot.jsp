@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p>
-                    &nbsp;2019-2030&nbsp;&nbsp;XX 大学&nbsp;&nbsp;大同
+                    &nbsp;2019-2030&nbsp;&nbsp;XX 大学&nbsp;&nbsp;yanan
                 </p>
             </div>
         </div>

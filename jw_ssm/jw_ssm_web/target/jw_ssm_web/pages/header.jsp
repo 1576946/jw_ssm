@@ -27,10 +27,14 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <%--class="active"--%>
-                <li ><a href="${pageContext.request.contextPath}/index/Pages.do"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;管理主页</a></li>
-                <li><a href="${pageContext.request.contextPath}/StudentManage/Pages.do"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;学生管理</a></li>
-                <li><a href="${pageContext.request.contextPath}/Visit/Pages.do"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;来访登记</a></li>
-                <li><a href="${pageContext.request.contextPath}/Dorm_C/Pages.do"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;宿舍资源</a></li>
+                <li><a href="${pageContext.request.contextPath}/index/Pages.do"><span
+                        class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;管理主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/StudentManage/Pages.do?page=1&size=7"><span
+                        class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;学生管理</a></li>
+                <li><a href="${pageContext.request.contextPath}/Visit/Pages.do?page=1&size=7"><span
+                        class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;来访登记</a></li>
+                <li><a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=1&size=7"><span
+                        class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;宿舍资源</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -40,13 +44,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dLabel">
                         <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;主页面</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a></li>
+                        <li><a href="${pageContext.request.contextPath}/sysLog/findAll.do"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;日志文件</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
                         <!--<li><a href="index.jsp"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
                         <li><a href="index.jsp"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>-->
                     </ul>
                 </li>
-                <li><a href="${pageContext.request.contextPath}/logout.do"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout.do"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a>
+                </li>
             </ul>
         </div>
         <!--导航-->

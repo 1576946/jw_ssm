@@ -25,7 +25,8 @@
     <form id="fem" class="form-signin" action="/login/test.do" method="post">
         <h2 class="form-signin-heading">欢迎登录宿舍管理系统</h2>
         <label for="username" class="sr-only">Email address</label>
-        <input type="email" id="username" name="username"class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" id="username" name="username" class="form-control" placeholder="Email address" required
+               autofocus>
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox">

@@ -6,3 +6,5 @@ cn\ztl\ssm\service\impl\UserServiceImpl.class
 cn\ztl\ssm\service\impl\IRoomServiceImpl.class
 cn\ztl\ssm\service\IUserService.class
 cn\ztl\ssm\service\IVisitService.class
+cn\ztl\ssm\service\impl\SysLogServiceImpl.class
+cn\ztl\ssm\service\ISysLogService.class

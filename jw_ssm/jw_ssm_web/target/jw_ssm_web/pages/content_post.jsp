@@ -8,7 +8,8 @@
     <title>学生宿舍管理系统</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-maizi.css"/>
-    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+          rel="stylesheet">
 
 </head>
 <body>
@@ -48,10 +49,10 @@
                 <div class="form-group">
                     <label for="title">来访时间</label>
                     <%--<input type="time" id="firstTime" name="theme_enter_str" class="form-control">--%>
-                                <!--指定 date标记-->
+                    <!--指定 date标记-->
                     <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" name="theme_enter_str"/>
-                                    <span class="input-group-addon">
+                        <input type='text' class="form-control" name="theme_enter_str"/>
+                        <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                     </div>

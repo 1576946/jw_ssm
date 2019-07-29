@@ -8,7 +8,8 @@
     <title>学生宿舍管理系统</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-maizi.css"/>
-    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+          rel="stylesheet">
 </head>
 <body>
 <!--导航-->
@@ -34,7 +35,7 @@
                 <li>
                     <a href="${pageContext.request.contextPath}/Dorm_C/Search.do">宿舍搜索</a>
                 </li>
-                <li   class="active">
+                <li class="active">
                     <a href="${pageContext.request.contextPath}/Dorm_C/Post.do">宿舍紧急情况</a>
                     <!-- <a href="" role="button" data-toggle="modal" data-target="#myModal">添加学生</a>-->
                 </li>
@@ -57,7 +58,8 @@
                 </div>
                 <div class="form-group">
                     <label for="content">具体情况</label>
-                    <textarea id="content" class="form-control" rows="15" cols="10" placeholder="请输入内容正文部分" name="R_context"></textarea>
+                    <textarea id="content" class="form-control" rows="15" cols="10" placeholder="请输入内容正文部分"
+                              name="R_context"></textarea>
                 </div>
                 <div class="checkbox">
                     <label>

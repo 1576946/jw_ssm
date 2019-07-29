@@ -3,6 +3,7 @@ package cn.ztl.ssm.service.impl;
 import cn.ztl.ssm.dao.IVisitDao;
 import cn.ztl.ssm.domain.VisitMan;
 import cn.ztl.ssm.service.IVisitService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +17,8 @@ public class IVisitServiceImpl implements IVisitService {
     private IVisitDao iVisitDao;
 
     @Override
-    public List<VisitMan> findAll() throws Exception {
+    public List<VisitMan> findAll(Integer page, Integer size) throws Exception {
+        PageHelper.startPage(page, size);
         return iVisitDao.findAll();
     }
 

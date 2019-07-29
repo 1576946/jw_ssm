@@ -22,7 +22,7 @@
                 <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do" class="list-group-item active">宿舍管理</a>
                 <a href="${pageContext.request.contextPath}/Dorm_C/Search.do" class="list-group-item">宿舍搜索</a>
                 <a href="${pageContext.request.contextPath}/Dorm_C/Post.do" class="list-group-item">宿舍紧急情况</a>
-                <a href="" role="button" data-toggle="modal" data-target="#myModal">添加宿舍</a>
+                <a href="" role="button" data-toggle="modal" data-target="#myModal" class="list-group-item">添加宿舍</a>
                 <!-- <a href="" role="button"  class="list-group-item" data-toggle="modal" data-target="#myModal">添加学生</a>-->
             </div>
         </div>
@@ -55,7 +55,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${roomingList}" var="rooming">
+                <c:forEach items="${roomingList.list}" var="rooming">
                     <tr>
                         <td>${rooming.s_roomOfNumber }</td>
                         <td>${rooming.numberOfPeople }</td>
@@ -83,15 +83,29 @@
             </table>
             <nav class="pull-right">
                 <ul class="pagination">
-                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2 </a></li>
-                    <li><a href="#">3 </a></li>
-                    <li><a href="#">4 </a></li>
-                    <li><a href="#">5 </a></li>
-                    <li><a href="#">6 </a></li>
-                    <li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
+                    <%-- <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                     </li>
+                     <li class="active"><a href="#">1</a></li>
+                     <li><a href="#">2 </a></li>
+                     <li><a href="#">3 </a></li>
+                     <li><a href="#">4 </a></li>
+                     <li><a href="#">5 </a></li>
+                     <li><a href="#">6 </a></li>
+                     <li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>--%>
+
+                    <li>
+                        <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=${roomingList.pageNum-1}&size=${roomingList.pageSize}"
+                           aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <c:forEach begin="1" end="${roomingList.pages}" var="pageNum">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=${pageNum}&size=${roomingList.pageSize}">${pageNum}</a>
+                        </li>
+                    </c:forEach>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/Dorm_C/Pages.do?page=${roomingList.pageNum+1}&size=${roomingList.pageSize}"><span
+                                aria-hidden="true">&raquo;</span></a></li>
+
+
                 </ul>
             </nav>
         </div>

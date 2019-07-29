@@ -18,7 +18,7 @@ public class IStudentServiceImpl implements IStudentService {
     private IStudentDao iStudentDao;
 
     @Override
-    public List<Student> findAll(int page, int size) throws Exception {
+    public List<Student> findAll(Integer page, Integer size) throws Exception {
         PageHelper.startPage(page, size);
         return iStudentDao.findAll();
     }

@@ -1,4 +1,5 @@
 cn\ztl\ssm\dao\IStudentDao.class
 cn\ztl\ssm\dao\IVisitDao.class
 cn\ztl\ssm\dao\IRoomingDao.class
+cn\ztl\ssm\dao\ISysLogDao.class
 cn\ztl\ssm\dao\IUserDao.class

@@ -45,7 +45,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${visitManList}" var="visitMan">
+                <c:forEach items="${visitManList.list}" var="visitMan">
                     <tr>
                         <th scope="row">${visitMan.theme_cause}</th>
                         <td>${visitMan.theme_name}</td>
@@ -88,15 +88,19 @@
             </table>
             <nav class="pull-right">
                 <ul class="pagination">
-                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2 </a></li>
-                    <li><a href="#">3 </a></li>
-                    <li><a href="#">4 </a></li>
-                    <li><a href="#">5 </a></li>
-                    <li><a href="#">6 </a></li>
-                    <li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/Visit/Pages.do?page=${visitManList.pageNum-1}&size=${visitManList.pageSize}"
+                           aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <c:forEach begin="1" end="${visitManList.pages}" var="pageNum">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/Visit/Pages.do?page=${pageNum}&size=${visitManList.pageSize}">${pageNum}</a>
+                        </li>
+                    </c:forEach>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/Visit/Pages.do?page=${visitManList.pageNum+1}&size=${visitManList.pageSize}"><span
+                                aria-hidden="true">&raquo;</span></a></li>
+
+
                 </ul>
             </nav>
         </div>

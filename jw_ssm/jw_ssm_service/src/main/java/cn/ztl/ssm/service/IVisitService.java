@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IVisitService {
 
-    public List<VisitMan> findAll() throws Exception;
+    public List<VisitMan> findAll(Integer page, Integer size) throws Exception;
 
     public void saveVisit(VisitMan visitMan) throws Exception;
 }
